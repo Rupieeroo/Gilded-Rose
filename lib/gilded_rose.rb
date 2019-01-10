@@ -26,6 +26,13 @@ class GildedRose
     item.quality = 0 if item.sell_in <= 0
   end
 
+  def normal_item_update(item)
+    item.sell_in -= 1
+    item.quality -= 1
+    item.quality -= 1 if item.sell_in <= 0
+    return if item.quality > 50
+  end
+
   def update_quality
     @items.each do |item|
       if item.name != "Aged Brie" and item.name != "Backstage passes to a TAFKAL80ETC concert"
