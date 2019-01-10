@@ -35,7 +35,10 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      
+      if item.name == 'Aged Brie'
+        aged_brie_update(item)
+        updater(item)
+      end
     end
   end
 end
