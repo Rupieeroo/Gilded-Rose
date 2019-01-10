@@ -38,6 +38,9 @@ class GildedRose
       if item.name == 'Aged Brie'
         aged_brie_update(item)
         updater(item)
+      elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
+        backstage_pass_update(item)
+        updater(item)
       end
     end
   end
