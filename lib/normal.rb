@@ -11,7 +11,7 @@ class Normal
       item.sell_in -= 1
       item.quality -= 1
       item.quality -= 1 if item.sell_in <= 0
-      return if item.quality > 50
+      break if item.quality > 50
     end
   end
 end
