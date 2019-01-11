@@ -1,3 +1,5 @@
+require 'normal'
+
 class GildedRose
 
   def initialize(items)
@@ -23,11 +25,9 @@ class GildedRose
     item.quality = 0 if item.sell_in <= 0
   end
 
-  def normal_update(item)
-    item.sell_in -= 1
-    item.quality -= 1
-    item.quality -= 1 if item.sell_in <= 0
-    return if item.quality > 50
+  def normal_update
+    item = Normal.new(@items)
+    item.update
   end
 
   def update_quality
@@ -37,9 +37,11 @@ class GildedRose
       elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
         backstage_pass_update(item)
       else
-        normal_update(item) unless item.name == 'Sulfuras, Hand of Ragnaros'
+        normal_update unless item.name == 'Sulfuras, Hand of Ragnaros'
       end
       updater(item) unless item.name == 'Sulfuras, Hand of Ragnaros'
     end
   end
 end
+
+# SOLID liskov substetution principle, ducktyping, inheritance and polymorphism
