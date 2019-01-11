@@ -1,11 +1,9 @@
 class Updater
 
-  attr_reader :items
-
   def initialize(items)
     @items = items
   end
-  
+
   def updater
     @items.each do |item|
       item.quality = 0 if item.quality < 0

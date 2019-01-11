@@ -1,7 +1,5 @@
 class AgedBrie
 
-  attr_reader :items
-
   def initialize(items)
     @items = items
   end
@@ -14,10 +12,8 @@ class AgedBrie
     end
   end
 
-  def updater
-    @items.each do |item|
-      item.quality = 0 if item.quality < 0
-      item.quality = 50 if item.quality > 50
-    end
+  def final_check
+    final = Updater.new(@items)
+    final.updater
   end
 end

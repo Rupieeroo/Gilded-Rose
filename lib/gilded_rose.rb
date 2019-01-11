@@ -9,27 +9,27 @@ class GildedRose
     @items = items
   end
 
+  def updater
+    item = Updater.new(@items)
+    item.updater
+  end
+
   def aged_brie_update
     item = AgedBrie.new(@items)
     item.update
-    item.updater
+    item.final_check
   end
 
   def backstage_pass_update
     item = BackstagePass.new(@items)
     item.update
-    item.updater
+    item.final_check
   end
 
   def normal_update
     item = Normal.new(@items)
     item.update
-    item.updater
-  end
-
-  def updater
-    item = Updater.new(@items)
-    item.updater
+    item.final_check
   end
 
   def update_quality
