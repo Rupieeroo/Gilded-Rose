@@ -42,7 +42,6 @@ class GildedRose
         else
           normal_update unless item.name == 'Sulfuras, Hand of Ragnaros'
       end
-      updater unless item.name == 'Sulfuras, Hand of Ragnaros'
     end
   end
 end
