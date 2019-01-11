@@ -1,5 +1,6 @@
 require 'normal'
 require 'backstage_pass'
+require 'aged_brie'
 
 class GildedRose
 
@@ -12,10 +13,9 @@ class GildedRose
     item.quality = 50 if item.quality > 50
   end
 
-  def aged_brie_update(item)
-    item.sell_in -= 1
-    item.quality += 1
-    item.quality += 1 if item.sell_in < 0
+  def aged_brie_update
+    item = AgedBrie.new(@items)
+    item.update
   end
 
   def backstage_pass_update
@@ -31,7 +31,7 @@ class GildedRose
   def update_quality
     @items.each do |item|
       if item.name == 'Aged Brie'
-        aged_brie_update(item)
+        aged_brie_update
       elsif item.name == 'Backstage passes to a TAFKAL80ETC concert'
         backstage_pass_update
       else
