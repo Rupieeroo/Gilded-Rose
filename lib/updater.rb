@@ -10,5 +10,4 @@ class Updater
       item.quality = 50 if item.quality > 50
     end
   end
-
 end

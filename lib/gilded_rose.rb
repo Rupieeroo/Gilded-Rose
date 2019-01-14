@@ -1,9 +1,10 @@
+require 'item_check'
 require 'normal'
 require 'backstage_pass'
 require 'aged_brie'
 require 'updater'
 
-class GildedRose
+class GildedRose < ItemCheck
 
   def initialize(items)
     @items = items
