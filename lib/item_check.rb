@@ -1,3 +1,8 @@
+require 'normal'
+require 'backstage_pass'
+require 'aged_brie'
+require 'updater'
+
 class ItemCheck
 
   attr_accessor :items
