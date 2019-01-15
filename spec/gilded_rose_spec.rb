@@ -141,5 +141,31 @@ describe GildedRose do
         end
       end
     end
+
+    context "When Item is Conjured" do
+      it "does not change the name" do
+        item = Conjured.new("foo", 0, 0)
+        GildedRose.new([item]).update_quality
+        expect(item.name).to eq "foo"
+      end
+
+      it "lowers the sell_in by two after a day" do
+        item = Conjured.new("item", 2, 0)
+        GildedRose.new([item]).update_quality
+        expect(item.sell_in).to eq 0
+      end
+
+      it "never lowers quality below 0" do
+        item = Conjured.new("item", 0, 0)
+        GildedRose.new([item]).update_quality
+        expect(item.quality).to eq(0)
+      end
+
+      it 'lowers quality by four after a day' do
+        item = Conjured.new("item", 0, 4)
+        GildedRose.new([item]).update_quality
+        expect(item.quality).to eq(0)
+      end
+    end
   end
 end
