@@ -2,6 +2,7 @@ require 'normal'
 require 'backstage_pass'
 require 'aged_brie'
 require 'legendary'
+require 'conjured'
 
 class GildedRose
 
