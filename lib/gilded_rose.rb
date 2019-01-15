@@ -1,8 +1,6 @@
-require 'item_check'
 require 'normal'
 require 'backstage_pass'
 require 'aged_brie'
-require 'updater'
 require 'legendary'
 
 class GildedRose
